@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>List</title>
+  <link rel="stylesheet" href="list.css" />
+</head>
+<body>
+  <div id="bd">
+    <img id="img" src="avatar.jpg" alt=""><br>
+
+    <div class="search-box">
+      <input type="text" placeholder="Enter Your Task">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <h3 style="color: aliceblue;">Category</h3>
+    <div id="category"></div><br>
+
+    <!-- Task input area -->
+    <div class="task-inputs">
+      <input type="text" id="taskTitle" placeholder="Task Title" />
+      <input type="text" id="taskSubtasks" placeholder="Subtasks (comma-separated)" />
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <h3 id="TT">Today's Task</h3>
+    <div id="Task"></div>
+
+    <div id="taskDetail" class="detail"></div>
+  </div>
+
+  <script src="list.js"></script>
+</body>
+</html>

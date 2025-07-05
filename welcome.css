@@ -1,0 +1,298 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body handles full height and centering */
+body {
+  height: 100vh;          
+  margin: 0;              
+  padding: 0;             
+  color: #fff;
+  background: black;
+  font-family: "Source Sans Pro", sans-serif;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+}
+
+/* Container to stack title, subtitle, images */
+.container {
+  position:fixed; /* Take it out of normal flow */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;      /* Full screen size */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container h1{
+  margin-top: 0px;
+}
+
+.container h3{
+  margin-top: 250px;
+}
+
+
+.image-row {
+  position:fixed; /* Take it out of normal flow */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;      /* Full screen size */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  background-color:rgba(0,0,0,0); /* Fully transparent */
+  z-index: -2; /* Ensure it's below background */
+
+}
+
+.image-row img {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  margin-top: 50px; /* push images down */
+}
+
+/* Slide in animations */
+@keyframes slideFromLeft {
+  0% {
+    transform: translate(-400px, 400px); /* from left and down (bottom-left corner) */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);          /* to normal position */
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideFromBottum {
+  0% {
+    transform: translateY(200px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translate(400px, -400px); /* from right and up (top-right corner) */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+
+/* Assign animation to each image */
+.image-row img:nth-child(1) {
+  animation: slideFromLeft 2.05s ease forwards;
+  animation-delay: 0.0s;
+}
+
+.image-row img:nth-child(2) {
+  animation: slideFromBottum 2.05s ease forwards;
+  animation-delay: 0.0s;
+}
+
+.image-row img:nth-child(3) {
+  animation: slideFromRight 2.05s ease forwards;
+  animation-delay: 0.0s;
+}
+
+
+/* Title (h1) styles and animations */
+h1 {
+  font-size: 8vw;
+  margin: 0;
+
+  background: 50% 100% / 50% 50% no-repeat
+              radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: reveal 1.5s ease-in-out forwards 200ms,
+             glow 1.5s linear infinite 2s;
+}
+
+@keyframes reveal {
+  80% {
+    letter-spacing: 50px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+
+/* Subtitle (h3) and letter animations */
+h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #ccc;
+  font-weight: 700;
+}
+
+h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
+  animation-name: fadeUp;
+  animation-duration: 0.1s;
+}
+
+/* Animate letters with stagger delay */
+h3 span:nth-child(1)  { animation-delay: 1.6s; }
+h3 span:nth-child(2)  { animation-delay: 1.65s; }
+h3 span:nth-child(3)  { animation-delay: 1.7s; }
+h3 span:nth-child(4)  { animation-delay: 1.75s; }
+h3 span:nth-child(5)  { animation-delay: 1.8s; }
+h3 span:nth-child(6)  { animation-delay: 1.85s; }
+h3 span:nth-child(7)  { animation-delay: 1.9s; }
+h3 span:nth-child(8)  { animation-delay: 1.95s; }
+h3 span:nth-child(9)  { animation-delay: 2.0s; }
+h3 span:nth-child(10) { animation-delay: 2.05s; }
+h3 span:nth-child(11) { animation-delay: 2.1s; }
+h3 span:nth-child(12) { animation-delay: 2.15s; }
+h3 span:nth-child(13) { animation-delay: 2.2s; }
+h3 span:nth-child(14) { animation-delay: 2.25s; }
+h3 span:nth-child(15) { animation-delay: 2.3s; }
+h3 span:nth-child(16) { animation-delay: 2.35s; }
+h3 span:nth-child(17) { animation-delay: 2.4s; }
+h3 span:nth-child(18) { animation-delay: 2.45s; }
+h3 span:nth-child(19) { animation-delay: 2.5s; }
+h3 span:nth-child(20) { animation-delay: 2.55s; }
+h3 span:nth-child(21) { animation-delay: 2.6s; }
+h3 span:nth-child(22) { animation-delay: 2.65s; }
+h3 span:nth-child(23) { animation-delay: 2.7s; }
+h3 span:nth-child(24) { animation-delay: 2.75s; }
+h3 span:nth-child(25) { animation-delay: 2.8s; }
+h3 span:nth-child(26) { animation-delay: 2.85s; }
+h3 span:nth-child(27) { animation-delay: 2.9s; }
+h3 span:nth-child(28) { animation-delay: 2.95s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Next button styles with animation */
+#btn-nxt {
+  position: fixed;
+  top: 650px; /* initial position above viewport */
+  right: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 10px;
+
+  background-color: #000;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+  animation: riseFromBottom 1s ease forwards;
+  animation-delay: 2.95s;
+
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+
+
+@keyframes riseFromBottom {
+  0% {
+    top: 700px;   /* start below */
+    opacity: 0;
+  }
+  60% {
+    top: 600px;   /* overshoot upward */
+    opacity: 1;
+  }
+  80% {
+    top: 670px;   /* bounce down */
+    opacity: 1;
+  }
+  100% {
+    top: 640px;   /* settle at final position */
+    opacity: 1;
+  }
+}
+
+/* Button text span styling */
+#btn-nxt span {
+  display: inline-block;
+  color: white;
+
+  background-image: none;
+  background-clip: unset;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+
+  transition: transform 0.3s ease, background-position 0.5s ease;
+  background-position: 0% center;
+}
+
+/* Animated gradient text on hover */
+#btn-nxt:hover span {
+  animation: textColorSweep 2s linear infinite;
+  transform: translateX(5px);
+
+  background-image: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes textColorSweep {
+  100% {
+    background-position: 0% center;
+  }
+  0% {
+    background-position: 100% center;
+  }
+}
+
+/* Button hover effect */
+#btn-nxt:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05) rotateZ(5deg);
+}

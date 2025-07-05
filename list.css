@@ -1,0 +1,238 @@
+/* General Body) */
+body {
+  background-color: rgb(209, 255, 157);
+  margin: 0; 
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif; 
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  height: 100vh; /* Makes the body fill the entire viewport height */
+
+  /* Scrollbar customization*/
+  scrollbar-width: thin;
+  scrollbar-color: rgba(136, 136, 136, 0.3) transparent;
+}
+
+
+/*  Main Container Box */
+#bd {
+  width: 360px; /* Fixed width of the box */
+  height: 740px; 
+  background-color: #1e1e1e; 
+  border-radius: 15px; 
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Outer shadow for depth */
+  padding: 20px;
+  box-sizing: border-box; 
+  overflow-y: auto; /* Enables vertical scroll if content overflows */
+  color: white; 
+  position: relative;
+}
+
+
+/* Profile Image */
+#img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; 
+  object-fit: cover; /* Keeps image proportions */
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+/* Search Bar */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  padding: 10px 15px;
+  width: 90%;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 70%;
+}
+
+
+/* Headings */
+h3 {
+  color: aliceblue;
+  margin: 10px;
+}
+
+
+/* Category Box */
+#category {
+  background-color: #2a2a2a;
+  padding: 70px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+/* Task Section */
+#Task {
+  background-color: #2a2a2a;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
+  height: 100px; /* Fixed height */
+  overflow-y: auto; /* Allows scroll if tasks exceed height */
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(136, 136, 136, 0.3) transparent;
+}
+
+/* Task Title */
+#TT {
+  font-size: 16px;
+  color: white;
+}
+
+
+/* Task Input Area */
+.task-inputs {
+  text-align: center; /* Center-align button and inputs */
+}
+
+.task-inputs input,
+.task-inputs textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Centered Button */
+.task-inputs button {
+  width: 50%;
+  padding: 10px;
+  background: #03dac5;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+
+.task-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.task-card {
+  background: #444;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.task-card:hover {
+  background: #555;
+}
+
+.delete-x {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.delete-x:hover {
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+}
+
+
+/* Task Detail View */
+.detail {
+  background-color: #2f2f2f;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.detail h3 {
+  margin-top: 0;
+  color: #03dac5;
+}
+
+.detail ul {
+  padding-left: 20px;
+}
+
+.detail li {
+  margin-bottom: 6px;
+}
+
+
+/* -------------------------------
+   Scrollable Task Details
+-------------------------------- */
+#taskDetail {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+
+  scrollbar-color: rgba(136, 136, 136, 0.3) transparent;
+}
+
+
+/* -------------------------------
+   Custom Scrollbar Styling
+   For WebKit Browsers
+-------------------------------- */
+::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* No visible track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 136, 136, 0.3); /* Light thumb */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* On hover of the body, scrollbar becomes more visible */
+body:hover ::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 136, 136, 0.7); /* Darker thumb on hover */
+}
